@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files and credentials
+.env
+.env.*
+*.env
+*/.env
+*/.env.*
+!*.env.example
+!**/.env.example
+
+# Production builds
+dist/
+build/
+*/dist/
+*/build/
+
+# Logs & Cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+.cache/
+.system_generated/
+
+# macOS / OS files
+.DS_Store
+Thumbs.db

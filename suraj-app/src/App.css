@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #090d16;
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ====================================================
+   Aesthetic Background & Container
+   ==================================================== */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 10%, #171c32 0%, #090d16 80%);
+  padding: 24px;
+}
+
+/* Subtle Geometric Dot Grid Pattern */
+.bg-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  z-index: 1;
+}
+
+/* Glowing Aurora Ambient Orbs */
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+}
+
+.bg-glow-1 {
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  top: -100px;
+  left: 10%;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+}
+
+.bg-glow-2 {
+  width: 380px;
+  height: 380px;
+  background: linear-gradient(135deg, #d946ef 0%, #ec4899 100%);
+  bottom: -80px;
+  right: 12%;
+  animation: floatOrb 15s ease-in-out infinite alternate-reverse;
+}
+
+.bg-glow-3 {
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  top: 45%;
+  left: 60%;
+  opacity: 0.4;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+}
+
+/* ====================================================
+   Glassmorphism Card
+   ==================================================== */
+
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(17, 24, 39, 0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 40px 34px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Header & Badge */
+.auth-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.auth-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(217, 70, 239, 0.25) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+  margin-bottom: 16px;
+  color: #a78bfa;
+}
+
+.auth-box h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.auth-box p.subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ====================================================
+   Form & Inputs
+   ==================================================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.2px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #64748b;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px 13px 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input::placeholder {
+  color: #64748b;
+  font-size: 14px;
+}
+
+input:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+input:focus {
+  outline: none;
+  border-color: #818cf8;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.25),
+    0 0 16px rgba(99, 102, 241, 0.2);
+}
+
+/* ====================================================
+   Aesthetic Submit Button
+   ==================================================== */
+
+button {
+  margin-top: 6px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px -3px rgba(99, 102, 241, 0.45);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -3px rgba(139, 92, 246, 0.65);
+  filter: brightness(1.08);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ====================================================
+   Notification Badges (Error & Success)
+   ==================================================== */
+
+.error, .success {
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+}
+
+.success {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #86efac;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+}
+
+/* ====================================================
+   Links & Footer
+   ==================================================== */
+
+.auth-footer {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+a {
+  color: #a78bfa;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+/* ====================================================
+   Dashboard Styling
+   ==================================================== */
+
+.dashboard {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 10%, #171c32 0%, #090d16 80%);
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 16px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar button {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  box-shadow: none;
+}
+
+.navbar button:hover {
+  background: rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
+  filter: none;
+  transform: translateY(-1px);
+}
+
+.dashboard-content {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.dashboard-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.dashboard-content > p {
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.user-card {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 440px;
+  margin: 36px auto;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.user-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+}
+
+.user-card p {
+  margin: 10px 0;
+  color: #cbd5e1;
+  font-size: 14.5px;
+}
+
+.user-card strong {
+  color: #94a3b8;
+  display: inline-block;
+  width: 70px;
+}
