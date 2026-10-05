@@ -44,11 +44,20 @@ function Register() {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (parseErr) {
+        data = { message: "Server response error" };
+      }
 
       if (response.ok) {
         setIsSuccess(true);
         setMessage("Registration successful! Redirecting to login...");
+        if (data.token && data.user) {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("user", JSON.stringify(data.user));
+        }
         setFormData({
           name: "",
           email: "",
@@ -56,7 +65,7 @@ function Register() {
         });
         setTimeout(() => {
           navigate("/login");
-        }, 1500);
+        }, 1200);
       } else {
         setIsSuccess(false);
         setMessage(data.message || "Registration failed");

@@ -40,7 +40,12 @@ function Login() {
         }),
       });
 
-      const data = await response.json();
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (parseErr) {
+        data = { message: "Server response error" };
+      }
 
       if (!response.ok) {
         setMessage(data.message || "Invalid email or password");

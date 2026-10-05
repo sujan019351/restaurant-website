@@ -1493,39 +1493,7 @@
   font-size: 14px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .zepto-product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
 
-  .card-image-wrap {
-    height: 130px;
-  }
-
-  .card-title {
-    font-size: 13px;
-    height: 34px;
-  }
-
-  .current-price {
-    font-size: 14.5px;
-  }
-
-  .zepto-add-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .zepto-banners {
-    grid-template-columns: 1fr;
-  }
-
-  .receipt-meta-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ----------------------------------------------------
    Real UPI Payment Authentication Modal
@@ -1956,5 +1924,571 @@
   color: white;
   border-color: #5f259f;
 }
+
+/* ====================================================
+   Comprehensive Mobile & Tablet Responsive Layout
+   ==================================================== */
+
+/* Medium Devices & Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .zepto-nav-top {
+    padding: 12px 18px;
+  }
+
+  .zepto-main-content {
+    padding: 0 16px;
+  }
+
+  .zepto-product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Mobile & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .atria-top-bar {
+    font-size: 10.5px;
+    padding: 5px 10px;
+    letter-spacing: 0.4px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Navbar adjustments */
+  .zepto-nav-top {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .zepto-brand-group {
+    gap: 10px;
+  }
+
+  .zepto-logo {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  .zepto-logo span.tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .delivery-badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+  }
+
+  .delivery-badge .location-text {
+    max-width: 140px;
+    font-size: 11px;
+  }
+
+  .zepto-nav-actions {
+    gap: 8px;
+  }
+
+  .user-pill {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .login-nav-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .nav-bill-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .header-cart-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    gap: 6px;
+  }
+
+  .cart-count-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  /* Search Bar */
+  .zepto-search-container {
+    padding: 0 14px 10px;
+  }
+
+  .zepto-search-input {
+    padding: 11px 38px 11px 40px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  .search-icon {
+    left: 12px;
+  }
+
+  /* Main Container */
+  .zepto-main-content {
+    padding: 0 14px;
+    margin: 14px auto 0;
+  }
+
+  /* Horizontal swipeable promo banners on mobile */
+  .zepto-banners {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .zepto-banners::-webkit-scrollbar {
+    display: none;
+  }
+
+  .banner-card {
+    flex: 0 0 85%;
+    min-width: 260px;
+    max-width: 330px;
+    scroll-snap-align: start;
+    min-height: 110px;
+    padding: 16px 18px;
+    border-radius: 16px;
+  }
+
+  .banner-title {
+    font-size: 17px;
+  }
+
+  .banner-subtitle {
+    font-size: 12px;
+  }
+
+  /* Category pills */
+  .category-bar-wrapper {
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+  }
+
+  .category-bar {
+    gap: 8px;
+  }
+
+  .category-pill {
+    padding: 8px 14px;
+    font-size: 12.5px;
+    border-radius: 30px;
+  }
+
+  .category-icon {
+    font-size: 14px;
+  }
+
+  /* Sections & Headlines */
+  .canteen-section-group {
+    margin-bottom: 30px;
+  }
+
+  .section-headline {
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+  }
+
+  .section-headline h2 {
+    font-size: 18px;
+  }
+
+  .section-icon-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+    border-radius: 8px;
+  }
+
+  .item-count-text {
+    font-size: 11.5px;
+    padding: 2px 8px;
+  }
+
+  /* 2-Column Product Cards Grid on Mobile */
+  .zepto-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .zepto-card {
+    border-radius: 14px;
+  }
+
+  .card-image-wrap {
+    height: 125px;
+  }
+
+  .card-mins-badge {
+    font-size: 9px;
+    padding: 2px 5px;
+    top: 6px;
+    left: 6px;
+  }
+
+  .card-veg-symbol {
+    width: 14px;
+    height: 14px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .card-veg-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .card-discount-tag {
+    font-size: 8.5px;
+    padding: 1.5px 5px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .card-info {
+    padding: 10px 10px 12px;
+  }
+
+  .card-rating-row {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .card-title {
+    font-size: 13px;
+    height: 33px;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .card-weight {
+    font-size: 11px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-bottom-row {
+    gap: 4px;
+  }
+
+  .current-price {
+    font-size: 14.5px;
+  }
+
+  .original-price {
+    font-size: 10.5px;
+  }
+
+  .zepto-add-btn {
+    padding: 5px 12px;
+    font-size: 11.5px;
+    border-radius: 6px;
+  }
+
+  .zepto-qty-selector {
+    border-radius: 6px;
+  }
+
+  .qty-btn {
+    width: 24px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .qty-count {
+    font-size: 12px;
+    min-width: 18px;
+    padding: 0 3px;
+  }
+
+  /* Sticky Cart Bar */
+  .sticky-cart-bar {
+    width: calc(100% - 24px);
+    left: 12px;
+    transform: none;
+    bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 14px;
+  }
+
+  .cart-bar-total {
+    font-size: 16px;
+  }
+
+  .cart-bar-items {
+    font-size: 10px;
+  }
+
+  .cart-bar-right-actions {
+    gap: 6px;
+  }
+
+  .cart-bar-btn {
+    padding: 8px 12px;
+    font-size: 12.5px;
+    border-radius: 8px;
+  }
+
+  .cart-bar-bill-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* Cart Slide-Over Drawer */
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cart-drawer-header {
+    padding: 16px 18px;
+  }
+
+  .cart-drawer-body {
+    padding: 16px 18px;
+  }
+
+  .cart-item-row {
+    gap: 10px;
+  }
+
+  .cart-item-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-item-name {
+    font-size: 13.5px;
+  }
+
+  .cart-drawer-footer {
+    padding: 14px 18px;
+    gap: 8px;
+  }
+
+  .place-order-btn {
+    padding: 12px 14px;
+    font-size: 13.5px;
+  }
+
+  .drawer-bill-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  /* Modals */
+  .payment-modal-backdrop,
+  .bill-modal-backdrop,
+  .order-modal-backdrop {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .payment-modal-box,
+  .bill-modal-box {
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .payment-modal-header,
+  .bill-modal-header {
+    padding: 14px 18px;
+  }
+
+  .payment-modal-body {
+    padding: 16px;
+    gap: 12px;
+    max-height: calc(92vh - 65px);
+  }
+
+  .payment-amount-banner {
+    padding: 10px 14px;
+  }
+
+  .payment-amount-banner .value {
+    font-size: 20px;
+  }
+
+  .payment-tab-btn {
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+
+  .upi-qr-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .phonepe-stand-img {
+    max-width: 210px;
+  }
+
+  .bill-receipt-paper {
+    padding: 16px 14px;
+    max-height: calc(92vh - 120px);
+  }
+
+  .receipt-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .receipt-table {
+    font-size: 11px;
+  }
+
+  .receipt-table th, .receipt-table td {
+    padding: 6px 3px;
+  }
+
+  .bill-modal-actions {
+    padding: 10px 14px;
+  }
+
+  .bill-print-btn,
+  .bill-close-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .order-modal-box {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+}
+
+/* Small Smartphone Optimization (max-width: 480px) */
+@media (max-width: 480px) {
+  .zepto-nav-top {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .zepto-brand-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .zepto-logo {
+    font-size: 17.5px;
+  }
+
+  .delivery-badge {
+    padding: 2px 6px;
+    font-size: 10px;
+    border-radius: 6px;
+  }
+
+  .delivery-badge .location-text {
+    max-width: 110px;
+    font-size: 10px;
+  }
+
+  .time-pill {
+    font-size: 9.5px;
+    padding: 1px 4px;
+  }
+
+  .user-pill span {
+    max-width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-cart-btn span {
+    display: none;
+  }
+
+  .header-cart-btn {
+    padding: 7px 10px;
+  }
+
+  .zepto-product-grid {
+    gap: 8px;
+  }
+
+  .card-image-wrap {
+    height: 110px;
+  }
+
+  .card-info {
+    padding: 7px 8px 9px;
+  }
+
+  .card-title {
+    font-size: 12px;
+    height: 30px;
+  }
+
+  .current-price {
+    font-size: 13.5px;
+  }
+
+  .zepto-add-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .qty-btn {
+    width: 20px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .qty-count {
+    font-size: 11px;
+    min-width: 14px;
+  }
+
+  .sticky-cart-bar {
+    width: calc(100% - 16px);
+    left: 8px;
+    bottom: 8px;
+    padding: 8px 12px;
+  }
+
+  .cart-bar-total {
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Phones (max-width: 360px) */
+@media (max-width: 360px) {
+  .zepto-product-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-image-wrap {
+    height: 140px;
+  }
+
+  .card-title {
+    height: auto;
+  }
+}
+
 
 

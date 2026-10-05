@@ -877,7 +877,7 @@ function Home() {
             <input
               type="text"
               className="zepto-search-input"
-              placeholder="Search 'samosa', 'maggi', 'ice cream', 'chai', 'fruits' at Atria Canteen..."
+              placeholder="Search samosa, maggi, chai, cold drinks..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

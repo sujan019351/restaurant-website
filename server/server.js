@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Health check endpoint to quickly test server and database status
 app.get("/api/health", (req, res) => {
