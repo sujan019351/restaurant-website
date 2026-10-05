@@ -35,6 +35,8 @@ jobs:
 
       - name: Build frontend
         working-directory: suraj-app
+        env:
+          VITE_BASE_PATH: /restaurant-website/
         run: npm run build
 
       - name: Upload artifact for GitHub Pages

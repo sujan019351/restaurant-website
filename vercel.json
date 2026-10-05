@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd suraj-app && npm run build",
+  "outputDirectory": "suraj-app/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
